@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Mail, Phone, Linkedin, MapPin, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { profile } from "@/lib/data/profile"
+import { withBasePath } from "@/lib/basePath"
 
 export function ContactInfo() {
   const contactMethods = [
@@ -79,7 +80,7 @@ export function ContactInfo() {
 
       {/* Download CV */}
       <Button asChild className="w-full bg-transparent" variant="outline">
-        <a href="/resume.pdf" download>
+        <a href={withBasePath("/resume.pdf")} download>
           <Download className="mr-2 h-4 w-4" />
           Download CV
         </a>
